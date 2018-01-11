@@ -1,0 +1,57 @@
+<html>
+    
+    <h2 align="center">STUDENT REGISTRATION FORM</h2>
+
+    <table cellpadding="4" width="50%" border="8" align="center"cellspacing="2" bgcolor="aqua">
+
+        <tr>
+            <h4>PLEASE FILL THE DETAILS</h4>
+        </tr>
+
+        <tr>
+            <td>Id:</td>
+            <td><input type="varchar" [(ngModel)]="id"></td>
+        </tr>
+
+        <tr>
+            <td>First name:</td>
+            <td><input type="text" [(ngModel)]="firstname"></td>
+        </tr>
+
+        <tr>
+            <td>Last name:</td>
+            <td> <input type="text" [(ngModel)]="lastname"></td>
+        </tr>
+
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" [(ngModel)]="email"><br></td>
+        </tr>
+        
+        <button type="submit" (click)="submit()">Submit</button>
+        <button type="submit" (click)="update()">Update</button>
+        <button type="submit" (click)="delete()">Delete</button>
+    </table>
+
+    <table cellpadding="4" width="50%" border="8" align="center"cellspacing="2" bgcolor="aqua">
+
+        <tr>
+            <h4>STUDENT DETAILS</h4>
+        </tr>
+
+        <tr>
+            <th>id</th>
+            <th>firstname</th>
+            <th>lastname</th>
+            <th>eamil</th>
+        </tr>
+        
+        <tr *ngFor = "let student of students">
+            <td>{{student.id}}</td>
+            <td>{{student.firstname}}</td>
+            <td>{{student.lastname}}</td>
+            <td>{{student.email}}</td>
+        </tr>
+    </table>
+        
+</html>
